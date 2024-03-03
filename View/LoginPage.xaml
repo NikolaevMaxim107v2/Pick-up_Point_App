@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="Pick_up_Point_App.View.LoginPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Pick_up_Point_App.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="750" d:DesignWidth="900">
+    <Grid>
+        <!--Определение строк и столбцов-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="1.75*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!--Заливка ячеек-->
+        <Border Grid.Row ="1" Grid.Column="1" BorderThickness="3px" BorderBrush="#4B0082" Margin="2px 2px 5px 2px" Background="#ca9aec"/>
+
+        <!--Форма для авторизации-->
+        <StackPanel  Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="375px">
+            <TextBlock FontSize="18px" TextAlignment="Center" Text="Авторизация" Margin="0px 0px 0px 5px"/>
+            <Grid>
+                <TextBlock FontSize="18px" TextAlignment="Left" Text=" Логин:" Margin="0px 0px 0px 0px"/>
+                <TextBox FontSize="18px" Name="txtSearchBox"  Text="{Binding LoginText, UpdateSourceTrigger=PropertyChanged}" Margin="70px 0px 5px 10px"/>
+                <TextBlock FontSize="18px" Margin="75px 0px 5px 10px" Text="Логин/Email..."
+                Foreground="LightSteelBlue" IsHitTestVisible="False" Visibility="{Binding IsLoginHintVisible, UpdateSourceTrigger=PropertyChanged}"/>
+            </Grid>
+            <Grid>
+                <TextBlock FontSize="18px" TextAlignment="Left" Text="Пароль:" Margin="0px 0px 0px 0px"/>
+                <TextBox FontSize="18px"  Text="{Binding PasswordText, UpdateSourceTrigger=PropertyChanged}" Margin="70px 0px 5px 10px"/>
+                <TextBlock FontSize="18px" Margin="75px 0px 5px 10px" Text="Пароль..." 
+                Foreground="LightSteelBlue" IsHitTestVisible="False" Visibility="{Binding IsPasswordHintVisible, UpdateSourceTrigger=PropertyChanged}"/>
+            </Grid>
+            <Button FontSize="18px" Content="Войти" Height="30px"  Margin="5px 5px 5px 5px" Command="{Binding LoginCommand}"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

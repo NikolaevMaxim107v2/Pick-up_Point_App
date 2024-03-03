@@ -1,0 +1,83 @@
+﻿<UserControl x:Class="Pick_up_Point_App.View.MainPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Pick_up_Point_App.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="750" d:DesignWidth="900">
+    <Grid>
+        <!--Определение строк и столбцов-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+
+            <RowDefinition  Height="0.75*"/>
+        </Grid.RowDefinitions>
+
+        <!--Кнопка выхода из аккаунта-->
+        <Button Height="90px" Width="90px" Content="Выход" FontSize="14px" HorizontalAlignment="Left" Margin="10px 0px 0px 0px" Command="{Binding LogoutCommand}"/>
+
+        <!--Заливка ячеек-->
+        <Border Grid.Row ="0" Grid.Column="0" Grid.ColumnSpan="6" BorderThickness="3px" BorderBrush="#4B0082" Margin="110px 2px 5px 2px" Background="#ca9aec"/>
+        <Border Grid.Row ="7" Grid.ColumnSpan="6" Grid.RowSpan="2" BorderThickness="3px" BorderBrush="#4B0082" Margin="2px 2px 2px 2px" Background="#ca9aec"/>
+        <Border Grid.Row ="1" Grid.Column="0" Grid.ColumnSpan="4" Grid.RowSpan="5" BorderThickness="3px" BorderBrush="#4B0082" Margin="2px 2px 2px 2px" Background="#ca9aec"/>
+        <Border Grid.Row ="1" Grid.Column="4" Grid.ColumnSpan="2" Grid.RowSpan="5" BorderThickness="3px" BorderBrush="#4B0082" Margin="2px 2px 2px 2px" Background="#ca9aec"/>
+
+        <!--Поле поиска медикаментов-->
+        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Margin="110px 5px 0px 0px" VerticalAlignment="Center">
+            <Label Grid.Column="0" Grid.Row="0" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center">Поиск</Label>
+            <TextBox Margin="15px 0px 15px 0px" Text="{Binding TextSearchDrug, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        </StackPanel>
+
+        <!--Списки-->
+        <ListView Name="List" Grid.Column="0" Grid.Row="1" Margin="10px 10px 10px 10px" Grid.ColumnSpan="4" Grid.RowSpan="5"
+        ItemsSource="{Binding UpdateSourceTrigger=PropertyChanged}"
+        SelectedItem="{Binding SelectedItem}">
+            <ListView.View>
+                <GridView AllowsColumnReorder="False">
+                    <GridViewColumn Header="ID" Width="auto" DisplayMemberBinding="{Binding Path=Id, UpdateSourceTrigger=PropertyChanged}"/>
+                    <GridViewColumn Header="Название" Width="auto" DisplayMemberBinding="{Binding Path=Name, UpdateSourceTrigger=PropertyChanged}"/>
+                    <GridViewColumn Header="Номер заказа" Width="auto" DisplayMemberBinding="{Binding Path=RelOrderId, UpdateSourceTrigger=PropertyChanged}"/>
+                    <GridViewColumn Header="Цена, рублей" Width="auto" DisplayMemberBinding="{Binding Path=Price, UpdateSourceTrigger=PropertyChanged}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <!--Кнопки списка-->
+        <Button Name="AddButton" Content="Добавить товар" FontSize="14px" Margin="25px 20px 25px 20px" Command="{Binding ToAddPageCommand}" Grid.Row="3" Grid.Column="4" Grid.ColumnSpan="2"/>
+        <Button Name="DeleteButton" Content="Выдать заказ" FontSize="14px" Margin="25px 20px 25px 20px" Command="{Binding ToGivePageCommand}" Grid.Row="4" Grid.Column="4" Grid.ColumnSpan="2"/>
+
+        <StackPanel Grid.ColumnSpan="2" Grid.Column="4" Grid.Row="1">
+            <TextBlock FontSize="14px" Margin="25px 35px 15px 5px" TextAlignment="Center" Text="Пункт выдачи:"/>
+            <ComboBox Margin="15px 0px 15px 5px">
+            </ComboBox>
+        </StackPanel>
+
+        <StackPanel Grid.Column="3">
+            <TextBlock FontSize="14px" Margin="15px 25px 15px 0px" TextAlignment="Center" Text="Сортировка:"/>
+            <RadioButton Margin="10px 3px 0px 0px" Content="По возрастанию"/>
+            <RadioButton Margin="10px 3px 0px 0px" Content="По убыванию"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="4" Grid.ColumnSpan="2">
+            <TextBlock FontSize="14px" Margin="15px 25px 15px 0px" TextAlignment="Left" Text="{Binding CurrentUserText, UpdateSourceTrigger=PropertyChanged}"/>
+            <Button Content="Подробнее..." FontSize="14px" Height="30px" Margin="15px 10px 15px 15px" Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2" Command="{Binding ToUserDataCommand}"/>
+        </StackPanel>
+        
+
+    </Grid>
+</UserControl>

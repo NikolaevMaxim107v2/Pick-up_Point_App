@@ -1,0 +1,42 @@
+﻿<Window x:Class="Pick_up_Point_App.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pick_up_Point_App"
+        xmlns:viewmodels="clr-namespace:Pick_up_Point_App.ViewModel"
+        xmlns:views="clr-namespace:Pick_up_Point_App.View"
+        mc:Ignorable="d"
+        Title="{Binding WindowTitle}" 
+        MinHeight="750" MinWidth="900"
+        MaxHeight="750" MaxWidth="900"
+        Height="750" Width="900">
+    <Grid>
+
+        <Grid.Resources>
+            <DataTemplate DataType="{x:Type viewmodels:WelcomePageVM}">
+                <views:WelcomePage/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:LoginPageVM}">
+                <views:LoginPage/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:MainPageVM}">
+                <views:MainPage/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:MainPageAdminVM}">
+                <views:MainPageAdmin/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:UserDataPageVM}">
+                <views:UserDataPage/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:AddPageVM}">
+                <views:AddPage/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:GivePageVM}">
+                <views:GivePage/>
+            </DataTemplate>
+        </Grid.Resources>
+        <ContentControl Content="{Binding CurrentViewModel}"/>
+
+    </Grid>
+</Window>

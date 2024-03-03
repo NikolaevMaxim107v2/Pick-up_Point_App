@@ -14,20 +14,20 @@ namespace Pick_up_Point_App.Model
         private string _secondname;
         private bool _sex; //false - женский, true - мужской
         private string _login;
-        private int _pupID;
+        private string _photoPathName;
         private string _email;
         private string _phone;
-        private string _password; 
+        private string _password;
         private bool _isAdmin; //false - простой пользователь, true - администратор
 
-        public User(int id, string name, string secondname, bool sex, string login, int pupID, string email, string phone,string password, bool isAdmin)
+        public User(int id, string name, string secondname, bool sex, string login, string photoPathName,string email, string phone,string password, bool isAdmin)
         {
             Id = id;
             Name = name;
             Secondname = secondname;
             Sex = sex;
             Login = login;
-            PuPID = pupID;
+            PhotoPathName = photoPathName;
             Email = email;
             Phone = phone;
             Password = password;
@@ -39,7 +39,7 @@ namespace Pick_up_Point_App.Model
         public string Secondname { get { return _secondname; } set { _secondname = value; OnPropertyChanged(nameof(Secondname)); } }
         public bool Sex { get { return _sex; } set { _sex = value; OnPropertyChanged(nameof(Sex)); } }
         public string Login { get { return _login; } set { _login = value; OnPropertyChanged(nameof(Login)); } }
-        public int PuPID { get { return _pupID; } set { _pupID = value; OnPropertyChanged(nameof(PuPID)); } }
+        public string PhotoPathName { get { return _photoPathName; } set { _photoPathName = value; OnPropertyChanged(nameof(PhotoPathName)); } }
         public string Email { get { return _email; } set { _email = value; OnPropertyChanged(nameof(Email)); } }
         public string Phone { get { return _phone; } set { _phone = value; OnPropertyChanged(nameof(Phone)); } }
         public string Password { get { return _password; } set { _password = value; OnPropertyChanged(nameof(Password)); } }

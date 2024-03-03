@@ -18,9 +18,11 @@ namespace Pick_up_Point_App.ViewModel
         public string Phone { get; set; }
         public string Email { get; set; }
         public string Sex { get; set; }
+        public string PhotoPath { get; set; }
         public ICommand BackToMain { get; }
         public UserDataPageVM(NavigationStore navigationStore, WindowTitleStore windowTitleStore, UserStore userStore)
         {
+            PhotoPath = "/Resources/Images/" + userStore.CurrentUser.PhotoPathName + ".png";
             Name = userStore.CurrentUser.Name;
             Secondname = userStore.CurrentUser.Secondname;
             Phone = userStore.CurrentUser.Phone;

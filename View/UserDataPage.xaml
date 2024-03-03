@@ -25,8 +25,11 @@
         <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Center">
             
             <Grid Margin="0px 20px 0px 10px">
-                <Border BorderThickness="10px" BorderBrush="#000000" Background="#ffffff" Height="162px" Width="165px"/>
-                <Image  Source="/Resources/Images/Blank_photo.png" Height="160" Width="160" Margin="0px 0px 0px 0px"/>
+                <Border BorderThickness="8px" BorderBrush="#000000" Background="#ffffff" Height="162px" Width="165px"/>
+                <Image  Source="{Binding PhotoPath}" 
+                        MinHeight="100px" MaxHeight="160px" Height="152px"
+                        MinWidth="100px" MaxWidth="160px" Width="152px"
+                        Margin="0px 0px 0px 0px"/>
             </Grid>
             
 

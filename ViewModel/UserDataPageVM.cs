@@ -18,10 +18,12 @@ namespace Pick_up_Point_App.ViewModel
         public string Phone { get; set; }
         public string Email { get; set; }
         public string Sex { get; set; }
+        public string Pos { get; set; }
         public string PhotoPath { get; set; }
         public ICommand BackToMain { get; }
         public UserDataPageVM(NavigationStore navigationStore, WindowTitleStore windowTitleStore, UserStore userStore)
         {
+            windowTitleStore.WindowTitle = "Pick-up Point application: User Data";
             PhotoPath = "/Resources/Images/" + userStore.CurrentUser.PhotoPathName + ".png";
             Name = userStore.CurrentUser.Name;
             Secondname = userStore.CurrentUser.Secondname;
@@ -31,15 +33,18 @@ namespace Pick_up_Point_App.ViewModel
                 Sex = "Женский";
             else
                 Sex = "Мужской";
-            windowTitleStore.WindowTitle = "Pick-up Point application: User Data";
+            switch(userStore.CurrentUser.PosId)
+            {
+                case 0:
+                {
+                    Pos = "Работник пункта выдачи заказов";
+                    break;
+                }
+            }
             if (userStore.CurrentUser.IsAdmin)
-            {
                 BackToMain = new ToMainPageAdminCommand(navigationStore, windowTitleStore, userStore);
-            }
             else
-            {
                 BackToMain = new ToMainPageCommand(navigationStore, windowTitleStore, userStore);
-            }
         }
     }
 }

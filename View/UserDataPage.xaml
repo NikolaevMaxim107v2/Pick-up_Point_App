@@ -14,9 +14,9 @@
             <ColumnDefinition Width="0.5*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.25*"/>
+            <RowDefinition Height="0.1*"/>
             <RowDefinition/>
-            <RowDefinition Height="0.25*"/>
+            <RowDefinition Height="0.1*"/>
         </Grid.RowDefinitions>
 
         <!--Заливка ячеек-->
@@ -46,7 +46,10 @@
             <TextBox Height="20px" Width="250px" Margin="0px 0px 0px 10px" IsHitTestVisible="False" Text="{Binding Email, UpdateSourceTrigger=PropertyChanged}"/>
 
             <TextBlock HorizontalAlignment="Center" FontSize="14px" Text="Пол"/>
-            <TextBox Height="20px" Width="250px" IsHitTestVisible="False" Margin="0px 0px 0px 0px" Text="{Binding Sex, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Height="20px" Width="250px" IsHitTestVisible="False" Margin="0px 0px 0px 10px" Text="{Binding Sex, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <TextBlock HorizontalAlignment="Center" FontSize="14px" Text="Должность"/>
+            <TextBox Height="20px" Width="250px" IsHitTestVisible="False" Margin="0px 0px 0px 10px" Text="{Binding Pos, UpdateSourceTrigger=PropertyChanged}"/>
 
             <Button Content="Назад" Width="110px" Height="25px"  Margin="10px 10px 10px 10px" Command="{Binding BackToMain}"/>
 

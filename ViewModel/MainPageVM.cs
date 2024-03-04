@@ -17,10 +17,11 @@ namespace Pick_up_Point_App.ViewModel
         public ICommand ToAddPageCommand { get; }
         public ICommand ToGivePageCommand { get; }
         public string CurrentUserText { get; set; }
-
-        public MainPageVM(NavigationStore navigationStore, WindowTitleStore windowTitleStore, UserStore userStore)
+        public string OrdersCount { get; set; }
+        public MainPageVM(NavigationStore navigationStore, WindowTitleStore windowTitleStore, UserDataStore userStore)
         {
             CurrentUserText = CurrentUserText + "Пользователь: " + userStore.CurrentUser.Name + " " + userStore.CurrentUser.Secondname;
+            OrdersCount = "Всего заказов имеется: 0";
             windowTitleStore.WindowTitle = "Pick-up Point application: Main Window";
             LogoutCommand = new LogoutCommand(navigationStore, windowTitleStore);
             ToUserDataCommand = new ToUserDataCommand(navigationStore, windowTitleStore, userStore);

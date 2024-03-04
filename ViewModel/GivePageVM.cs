@@ -13,7 +13,7 @@ namespace Pick_up_Point_App.ViewModel
     public class GivePageVM : PropertyChange
     {
         public ICommand BackToMain { get; }
-        public GivePageVM(NavigationStore navigationStore, WindowTitleStore windowTitleStore, UserStore userStore)
+        public GivePageVM(NavigationStore navigationStore, WindowTitleStore windowTitleStore, UserDataStore userStore)
         {
             windowTitleStore.WindowTitle = "Pick-up Point application: Give";
             if (userStore.CurrentUser.IsAdmin)

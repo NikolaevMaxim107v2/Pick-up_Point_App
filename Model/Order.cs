@@ -11,6 +11,7 @@ namespace Pick_up_Point_App.Model
     {
         private int _id;
         private int _customerID;
+        private int _pupID;
         private string _orderPassword;
         private float _price;
         private DateTime _orderDate;
@@ -20,10 +21,11 @@ namespace Pick_up_Point_App.Model
         private bool _isReturned;
         
 
-        public Order(int id, int customerID, string orderPassword, float price, DateTime orderDate, DateTime orderGetDate, DateTime orderGiveDate, bool isGiven, bool isReturned)
+        public Order(int id, int customerID, int pupID, string orderPassword, float price, DateTime orderDate, DateTime orderGetDate, DateTime orderGiveDate, bool isGiven, bool isReturned)
         {
             Id = id;
             CustomerID = customerID;
+            PuPID = pupID;
             OrderPassword = orderPassword;
             Price = price;
             OrderDate = orderDate;
@@ -35,6 +37,7 @@ namespace Pick_up_Point_App.Model
 
         public int Id { get { return _id; } set { _id = value; OnPropertyChanged(nameof(Id)); } }
         public int CustomerID { get { return _customerID; } set { _customerID = value; OnPropertyChanged(nameof(CustomerID)); } }
+        public int PuPID { get { return _pupID; } set { _pupID = value; OnPropertyChanged(nameof(PuPID)); } }
         public string OrderPassword { get { return _orderPassword; } set { _orderPassword = value; OnPropertyChanged(nameof(OrderPassword)); } }
         public float Price { get { return _price; } set { _price = value; OnPropertyChanged(nameof(Price)); } }
         public DateTime OrderDate { get { return _orderDate; } set { _orderDate = value; OnPropertyChanged(nameof(OrderDate)); } }

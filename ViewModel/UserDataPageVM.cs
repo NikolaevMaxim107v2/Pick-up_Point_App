@@ -21,7 +21,7 @@ namespace Pick_up_Point_App.ViewModel
         public string Pos { get; set; }
         public string PhotoPath { get; set; }
         public ICommand BackToMain { get; }
-        public UserDataPageVM(NavigationStore navigationStore, WindowTitleStore windowTitleStore, UserStore userStore)
+        public UserDataPageVM(NavigationStore navigationStore, WindowTitleStore windowTitleStore, UserDataStore userStore)
         {
             windowTitleStore.WindowTitle = "Pick-up Point application: User Data";
             PhotoPath = "/Resources/Images/" + userStore.CurrentUser.PhotoPathName + ".png";

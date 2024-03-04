@@ -38,6 +38,7 @@
                     <GridViewColumn Header="ID" Width="auto" DisplayMemberBinding="{Binding Path=Id, UpdateSourceTrigger=PropertyChanged}"/>
                     <GridViewColumn Header="Название" Width="auto" DisplayMemberBinding="{Binding Path=Name, UpdateSourceTrigger=PropertyChanged}"/>
                     <GridViewColumn Header="Номер заказа" Width="auto" DisplayMemberBinding="{Binding Path=RelOrderId, UpdateSourceTrigger=PropertyChanged}"/>
+                    <GridViewColumn Header="Номер Товара" Width="auto" DisplayMemberBinding="{Binding Path=ProductId, UpdateSourceTrigger=PropertyChanged}"/>
                     <GridViewColumn Header="Цена, рублей" Width="auto" DisplayMemberBinding="{Binding Path=Price, UpdateSourceTrigger=PropertyChanged}"/>
                 </GridView>
             </ListView.View>
@@ -50,6 +51,7 @@
                     <GridViewColumn Header="ID" Width="auto" DisplayMemberBinding="{Binding Path=Id, UpdateSourceTrigger=PropertyChanged}"/>
                     <GridViewColumn Header="Название" Width="auto" DisplayMemberBinding="{Binding Path=Name, UpdateSourceTrigger=PropertyChanged}"/>
                     <GridViewColumn Header="Номер заказа" Width="auto" DisplayMemberBinding="{Binding Path=RelOrderId, UpdateSourceTrigger=PropertyChanged}"/>
+                    <GridViewColumn Header="Номер Товара" Width="auto" DisplayMemberBinding="{Binding Path=ProductId, UpdateSourceTrigger=PropertyChanged}"/>
                     <GridViewColumn Header="Цена, рублей" Width="auto" DisplayMemberBinding="{Binding Path=Price, UpdateSourceTrigger=PropertyChanged}"/>
                 </GridView>
             </ListView.View>
@@ -58,9 +60,9 @@
         <StackPanel Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="2" VerticalAlignment="Center">
             <Label FontSize="18px" HorizontalAlignment="Center" Margin="0px 20px 0px 0px">Окно выдачи</Label>
             <Label FontSize="14px" HorizontalAlignment="Center" Margin="0px 0px 0px 0px">(Введите номер заказа)</Label>
-            <Label FontSize="18px" HorizontalAlignment="Center" Margin="0px 20px 0px 0px">Номер заказа</Label>
+            <Label FontSize="18px" HorizontalAlignment="Center" Margin="0px 20px 0px 0px">Просканируйте штрихкод&#10;или введите номер заказа</Label>
             <TextBox Margin="15px 0px 15px 25px" Width="350px" Height="25px" IsReadOnly="True" Text=""/>
-            <TextBlock FontSize="18px" HorizontalAlignment="Center" Margin="0px 0px 0px 0px" TextAlignment="Center" Text="Просканируйте штрихкод возвращаемого товара&#10; или введите код возвращаемого товара "/>
+            <TextBlock FontSize="18px" HorizontalAlignment="Center" Margin="0px 0px 0px 5px" TextAlignment="Center" Text="Просканируйте штрихкод возвращаемого товара&#10; или введите код возвращаемого товара"/>
             <TextBox Margin="15px 0px 15px 25px" Width="350px" Height="25px" Text=""/>
             <Label FontSize="18px" HorizontalAlignment="Center" Margin="0px 0px 0px 0px">Цена</Label>
             <TextBox Margin="15px 0px 15px 0px" Width="350px" Height="25px" IsReadOnly="True" Text=""/>

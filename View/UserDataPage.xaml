@@ -11,6 +11,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.5*"/>
             <ColumnDefinition/>
+            <ColumnDefinition/>
             <ColumnDefinition Width="0.5*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -20,9 +21,10 @@
         </Grid.RowDefinitions>
 
         <!--Заливка ячеек-->
-        <Border Grid.Row ="1" Grid.Column="1"  BorderThickness="3px" BorderBrush="#4B0082" Margin="2px 2px 5px 2px" Background="#ca9aec"/>
+        <Border Grid.Row ="1" Grid.Column="0" Grid.ColumnSpan="2"  BorderThickness="3px" BorderBrush="#4B0082" Margin="15px 2px 5px 2px" Background="#ca9aec"/>
+        <Border Grid.Row ="1" Grid.Column="2" Grid.ColumnSpan="2"  BorderThickness="3px" BorderBrush="#4B0082" Margin="2px 2px 15px 2px" Background="#ca9aec"/>
 
-        <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Center">
+        <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Center">
             
             <Grid Margin="0px 20px 0px 10px">
                 <Border BorderThickness="8px" BorderBrush="#000000" Background="#ffffff" Height="162px" Width="165px"/>
@@ -52,7 +54,20 @@
             <TextBox Height="20px" Width="250px" IsHitTestVisible="False" Margin="0px 0px 0px 10px" Text="{Binding Pos, UpdateSourceTrigger=PropertyChanged}"/>
 
             <Button Content="Назад" Width="110px" Height="25px"  Margin="10px 10px 10px 10px" Command="{Binding BackToMain}"/>
-
         </StackPanel>
+
+        <TextBlock Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Top" Margin="0px 25px 0px 0px" HorizontalAlignment="Center" FontSize="14px" Text="Относящиеся пункты выдачи"/>
+        <ListView Name="List" Grid.Column="2" Grid.Row="1" Margin="15px 60px 30px 15px" Grid.ColumnSpan="2"
+        ItemsSource="{Binding UpdateSourceTrigger=PropertyChanged}"
+        SelectedItem="{Binding SelectedItem}">
+            <ListView.View>
+                <GridView AllowsColumnReorder="False">
+                    <GridViewColumn Header="ID" Width="auto" DisplayMemberBinding="{Binding Path=Id, UpdateSourceTrigger=PropertyChanged}"/>
+                    <GridViewColumn Header="Название" Width="auto" DisplayMemberBinding="{Binding Path=Name, UpdateSourceTrigger=PropertyChanged}"/>
+                    <GridViewColumn Header="Адрес" Width="auto" DisplayMemberBinding="{Binding Path=RelOrderId, UpdateSourceTrigger=PropertyChanged}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        
     </Grid>
 </UserControl>

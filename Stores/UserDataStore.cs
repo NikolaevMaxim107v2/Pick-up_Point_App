@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace Pick_up_Point_App.Stores
 {
-    public class UserStore : PropertyChange
+    public class UserDataStore : PropertyChange
     {
         private User _curUser;
 
         public User CurrentUser { get => _curUser; set { _curUser = value; OnUserChanged(); } }
 
-        public UserStore()
+        public UserDataStore()
         {
             _curUser = null;
         }

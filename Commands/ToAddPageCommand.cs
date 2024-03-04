@@ -15,7 +15,7 @@ namespace Pick_up_Point_App.Commands
         private readonly NavigationStore navigationStore;
         public ICommand NavigateToAddPageCommand { get; }
 
-        public ToAddPageCommand(NavigationStore navigationStore, WindowTitleStore windowTitleStore, UserStore userStore)
+        public ToAddPageCommand(NavigationStore navigationStore, WindowTitleStore windowTitleStore, UserDataStore userStore)
         {
             this.navigationStore = navigationStore;
             NavigateToAddPageCommand = new NavigationCommand<AddPageVM>(navigationStore, () => new AddPageVM(navigationStore, windowTitleStore, userStore));

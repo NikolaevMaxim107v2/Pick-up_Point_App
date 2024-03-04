@@ -17,7 +17,10 @@ namespace Pick_up_Point_App.Commands
         private readonly LoginPageVM _viewModel;
         private readonly NavigationStore _navigationStore;
         public UserListStore _userListStore = new UserListStore();
-        public UserStore _user = new UserStore();
+        public UserDataStore _user = new UserDataStore();
+        //public UserPuPsDataStore _userPuPs = new UserPuPsDataStore();
+        //public PuPsUsersStore _pupsUsers = new PuPsUsersStore();
+        //public PuPListStore _pups = new PuPListStore();
 
         public string denied_symbols = "?#<>%@/";
         public bool _isUser = false;
@@ -64,6 +67,11 @@ namespace Pick_up_Point_App.Commands
                         IsUser(_viewModel.LoginText, _viewModel.PasswordText, _userListStore.UsersList);
                         if (_isUser == true)
                         {
+                            //for(int i =0; i < _pupsUsers.PuPsUsersList.Count;i++)
+                            //{
+                            //    if ((_user.CurrentUser.Id == _pupsUsers.PuPsUsersList[i].UserId) && (_pups.PuPsList[i].Id == _pupsUsers.PuPsUsersList[i].PuPId))
+                            //        _userPuPs.CurUserPuPs[i] = _pups.PuPsList[i];
+                            //}
                             if (_user.CurrentUser.IsAdmin)
                             {
                                 MessageBox.Show($"Добро пожаловать! Для перехода далее нажмите 'ОК'", "Добро пожаловать!", MessageBoxButton.OK, MessageBoxImage.Information);

@@ -12,6 +12,7 @@ namespace Pick_up_Point_App.Model
         private int _id;
         private int _userID;
         private int _productID;
+        private int _productRating;
 
         public Product_Seller(int id, int userID, int productID)
         {

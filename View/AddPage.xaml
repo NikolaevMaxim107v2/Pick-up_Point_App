@@ -24,10 +24,10 @@
 
         <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Center">
 
-            <TextBlock HorizontalAlignment="Center" Margin="0px 50px 0px 0px"  FontSize="28px" Text=" Отсканируйте штрихкод&#10;или введите код вручную:"/>
+            <TextBlock HorizontalAlignment="Center" Margin="0px 50px 0px 0px"  FontSize="21px" Text=" Отсканируйте штрихкод&#10;или введите код вручную:"/>
             <TextBox Height="40px" Width="350px" Margin="0px 15px 0px 0px" Text="{Binding Sex, UpdateSourceTrigger=PropertyChanged}"/>
-            <Button Content="Подтвердить" FontSize="24px" Width="175px" Height="45px"  Margin="0px 15px 10px 10px" Command="{Binding BackToMain}"/>
-            <Button Content="Назад" FontSize="24px" Width="175px" Height="45px"  Margin="0px 10px 10px 0px" Command="{Binding BackToMain}"/>
+            <Button Content="Подтвердить" FontSize="21px" Width="175px" Height="45px"  Margin="0px 15px 10px 10px" Command="{Binding BackToMain}"/>
+            <Button Content="Назад" FontSize="21px" Width="175px" Height="45px"  Margin="0px 10px 10px 0px" Command="{Binding BackToMain}"/>
 
 
         </StackPanel>

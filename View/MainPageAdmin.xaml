@@ -33,18 +33,19 @@
 
         <!--Заливка ячеек-->
         <Border Grid.Row ="0" Grid.Column="0" Grid.ColumnSpan="6" BorderThickness="3px" BorderBrush="#4B0082" Margin="110px 2px 5px 2px" Background="#ca9aec"/>
-        <Border Grid.Row ="7" Grid.ColumnSpan="6" Grid.RowSpan="2" BorderThickness="3px" BorderBrush="#4B0082" Margin="2px 2px 2px 2px" Background="#ca9aec"/>
-        <Border Grid.Row ="1" Grid.Column="0" Grid.ColumnSpan="4" Grid.RowSpan="5" BorderThickness="3px" BorderBrush="#4B0082" Margin="2px 2px 2px 2px" Background="#ca9aec"/>
-        <Border Grid.Row ="1" Grid.Column="4" Grid.ColumnSpan="2" Grid.RowSpan="5" BorderThickness="3px" BorderBrush="#4B0082" Margin="2px 2px 2px 2px" Background="#ca9aec"/>
+        <Border Grid.Row ="6" Grid.ColumnSpan="6" Grid.RowSpan="2" BorderThickness="3px" BorderBrush="#4B0082" Margin="2px 2px 2px 2px" Background="#ca9aec"/>
+        <Border Grid.Row ="5" Grid.ColumnSpan="6" BorderThickness="3px" BorderBrush="#4B0082" Margin="2px 2px 2px 2px" Background="#ca9aec"/>
+        <Border Grid.Row ="1" Grid.Column="0" Grid.ColumnSpan="4" Grid.RowSpan="4" BorderThickness="3px" BorderBrush="#4B0082" Margin="2px 2px 2px 2px" Background="#ca9aec"/>
+        <Border Grid.Row ="1" Grid.Column="4" Grid.ColumnSpan="2" Grid.RowSpan="4" BorderThickness="3px" BorderBrush="#4B0082" Margin="2px 2px 2px 2px" Background="#ca9aec"/>
 
-        <!--Поле поиска медикаментов-->
+        <!--Поле поиска-->
         <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Margin="110px 5px 0px 0px" VerticalAlignment="Center">
             <Label Grid.Column="0" Grid.Row="0" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center">Поиск</Label>
             <TextBox Margin="15px 0px 15px 0px" Text="{Binding TextSearchDrug, UpdateSourceTrigger=PropertyChanged}"></TextBox>
         </StackPanel>
 
-        <!--Списки-->
-        <ListView Name="List" Grid.Column="0" Grid.Row="1" Margin="10px 10px 10px 10px" Grid.ColumnSpan="4" Grid.RowSpan="5"
+        <!--Список-->
+        <ListView Name="List" Grid.Column="0" Grid.Row="1" Margin="10px 10px 10px 10px" Grid.ColumnSpan="4" Grid.RowSpan="4"
    ItemsSource="{Binding UpdateSourceTrigger=PropertyChanged}"
    SelectedItem="{Binding SelectedItem}">
             <ListView.View>
@@ -80,9 +81,27 @@
             <Button Content="Подробнее..." FontSize="14px" Height="30px" Margin="15px 10px 15px 15px" Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2" Command="{Binding ToUserDataCommand}"/>
         </StackPanel>
 
-        <Button Content="Добавить" FontSize="14px" Margin="15px 10px 15px 10px" Grid.Row="6"/>
-        <Button Content="Изменить" FontSize="14px" Margin="15px 10px 15px 10px" Grid.Row="6" Grid.Column="1"/>
-        <Button Content="Удалить" FontSize="14px" Margin="15px 10px 15px 10px" Grid.Row="6" Grid.Column="2"/>
+        <Button Content="Добавить" FontSize="14px" Margin="15px 10px 15px 10px" Grid.Row="5"/>
+        <Button Content="Изменить" FontSize="14px" Margin="15px 10px 15px 10px" Grid.Row="5" Grid.Column="1"/>
+        <Button Content="Удалить" FontSize="14px" Margin="15px 10px 15px 10px" Grid.Row="5" Grid.Column="2"/>
+
+        <Grid Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="6">
+            <TextBlock FontSize="14px" Margin="15px 25px 15px 0px" Text="Фильтры:"/>
+            <Expander Header="Цена"  Margin="95px,18px,530px,5px" FontSize="14px" Width="275px" Height="60px">
+                <Grid Grid.Column="2" Grid.Row="3">
+                    <TextBlock Text="От:"/>
+                    <TextBox Margin="0px 0px 140px 15px" Height="25px" Width="80px"/>
+                    <TextBlock Margin="125px 0px 0px 0px" Text="До:"/>
+                    <TextBox Margin="130px 0px 0px 15px" Height="25px" Width="100px"/>
+                </Grid>
+            </Expander>
+            <Expander Header="Тип товара"  Margin="25px 0px 0px 0px" FontSize="14px" Width="200px" Height="50px">
+                <Grid Grid.Column="2" Grid.Row="3">
+                    <ComboBox Margin="35px 0px 15px 5px" Height="20px">
+                    </ComboBox>
+                </Grid>
+            </Expander>
+        </Grid>
 
     </Grid>
 </UserControl>

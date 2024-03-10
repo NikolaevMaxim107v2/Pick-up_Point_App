@@ -60,7 +60,7 @@
         <StackPanel Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="2" VerticalAlignment="Center">
             <Label FontSize="18px" HorizontalAlignment="Center" Margin="0px 20px 0px 0px">Окно выдачи</Label>
             <Label FontSize="14px" HorizontalAlignment="Center" Margin="0px 0px 0px 0px">(Введите номер заказа)</Label>
-            <Label FontSize="18px" HorizontalAlignment="Center" Margin="0px 20px 0px 0px">Просканируйте штрихкод&#10;или введите номер заказа</Label>
+            <TextBlock FontSize="18px" HorizontalAlignment="Center" Margin="0px 20px 0px 0px" Text="Просканируйте штрихкод&#10;или введите номер заказа"/>
             <TextBox Margin="15px 0px 15px 25px" Width="350px" Height="25px" IsReadOnly="True" Text=""/>
             <TextBlock FontSize="18px" HorizontalAlignment="Center" Margin="0px 0px 0px 5px" TextAlignment="Center" Text="Просканируйте штрихкод возвращаемого товара&#10; или введите код возвращаемого товара"/>
             <TextBox Margin="15px 0px 15px 25px" Width="350px" Height="25px" Text=""/>

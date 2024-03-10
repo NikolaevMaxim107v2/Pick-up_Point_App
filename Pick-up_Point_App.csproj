@@ -63,7 +63,9 @@
     <Compile Include="Commands\ToMainPageCommand.cs" />
     <Compile Include="Commands\ToUserDataCommand.cs" />
     <Compile Include="Model\Order.cs" />
+    <Compile Include="Model\Position.cs" />
     <Compile Include="Model\Product Type.cs" />
+    <Compile Include="Model\Product-Seller.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Model\PuP-User.cs" />
     <Compile Include="Model\PuP.cs" />

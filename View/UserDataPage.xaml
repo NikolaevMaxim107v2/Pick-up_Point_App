@@ -58,13 +58,12 @@
 
         <TextBlock Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Top" Margin="0px 25px 0px 0px" HorizontalAlignment="Center" FontSize="14px" Text="Относящиеся пункты выдачи"/>
         <ListView Name="List" Grid.Column="2" Grid.Row="1" Margin="15px 60px 30px 15px" Grid.ColumnSpan="2"
-        ItemsSource="{Binding UpdateSourceTrigger=PropertyChanged}"
-        SelectedItem="{Binding SelectedItem}">
+        ItemsSource="{Binding PuPList, UpdateSourceTrigger=PropertyChanged}">
             <ListView.View>
                 <GridView AllowsColumnReorder="False">
                     <GridViewColumn Header="ID" Width="auto" DisplayMemberBinding="{Binding Path=Id, UpdateSourceTrigger=PropertyChanged}"/>
                     <GridViewColumn Header="Название" Width="auto" DisplayMemberBinding="{Binding Path=Name, UpdateSourceTrigger=PropertyChanged}"/>
-                    <GridViewColumn Header="Адрес" Width="auto" DisplayMemberBinding="{Binding Path=RelOrderId, UpdateSourceTrigger=PropertyChanged}"/>
+                    <GridViewColumn Header="Адрес" Width="auto" DisplayMemberBinding="{Binding Path=Address, UpdateSourceTrigger=PropertyChanged}"/>
                 </GridView>
             </ListView.View>
         </ListView>

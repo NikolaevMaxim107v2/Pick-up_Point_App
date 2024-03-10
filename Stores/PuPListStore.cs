@@ -18,9 +18,9 @@ namespace Pick_up_Point_App.Stores
         {
             PuPsList = new List<PuP> 
             { 
-                new PuP (id:1,address:"5483 Johns Dam Apt. 984", ordersGet: 12, ordersGive: 7, ordersReturned:2),//, ordersHave: 3),
-                new PuP (id:2,address:"83968 Schimmel Unions Suite 765", ordersGet: 0, ordersGive: 0, ordersReturned:0),//, ordersHave: 0),
-                new PuP (id:3,address:"429 Labadie Mount Apt. 683", ordersGet: 15, ordersGive: 15, ordersReturned:5),//, ordersHave: 0),
+                new PuP (id:1, name:"Pick-up Point 1", address:"5483 Johns Dam Apt. 984"),// ordersGet: 12, ordersGive: 7, ordersReturned:2, ordersHave: 3),
+                new PuP (id:2, name:"Pick-up Point 2", address:"83968 Schimmel Unions Suite 765"),// ordersGet: 0, ordersGive: 0, ordersReturned:0, ordersHave: 0),
+                new PuP (id:3, name:"Pick-up Point 3", address:"429 Labadie Mount Apt. 683"),// ordersGet: 15, ordersGive: 15, ordersReturned:5, ordersHave: 0),
             };
         }
 

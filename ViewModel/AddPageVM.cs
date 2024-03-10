@@ -12,6 +12,10 @@ namespace Pick_up_Point_App.ViewModel
 {
     public class AddPageVM : PropertyChange
     {
+        private int productCode;
+
+        public int ProductCode { get { return productCode; } set { productCode = value; OnPropertyChanged(nameof(ProductCode)); } }
+
         public ICommand BackToMain { get; }
         public AddPageVM(NavigationStore navigationStore, WindowTitleStore windowTitleStore, UserDataStore userStore)
         {

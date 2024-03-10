@@ -40,17 +40,18 @@
         <!--Поле поиска медикаментов-->
         <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Margin="110px 5px 0px 0px" VerticalAlignment="Center">
             <Label Grid.Column="0" Grid.Row="0" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center">Поиск</Label>
-            <TextBox Margin="15px 0px 15px 0px" Text="{Binding TextSearchDrug, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+            <TextBox Margin="15px 0px 15px 0px" Text="{Binding TextSearchProduct, UpdateSourceTrigger=PropertyChanged}"></TextBox>
         </StackPanel>
 
         <!--Списки-->
         <ListView Name="List" Grid.Column="0" Grid.Row="1" Margin="10px 10px 10px 10px" Grid.ColumnSpan="4" Grid.RowSpan="5"
-        ItemsSource="{Binding UpdateSourceTrigger=PropertyChanged}"
-        SelectedItem="{Binding SelectedItem}">
+                  ItemsSource="{Binding ProductsList, UpdateSourceTrigger=PropertyChanged}"
+                  SelectedItem="{Binding SelectedItem}">
             <ListView.View>
                 <GridView AllowsColumnReorder="False">
                     <GridViewColumn Header="ID" Width="auto" DisplayMemberBinding="{Binding Path=Id, UpdateSourceTrigger=PropertyChanged}"/>
                     <GridViewColumn Header="Название" Width="auto" DisplayMemberBinding="{Binding Path=Name, UpdateSourceTrigger=PropertyChanged}"/>
+                    <GridViewColumn Header="Тип" Width="auto" DisplayMemberBinding="{Binding Path=ProductType, UpdateSourceTrigger=PropertyChanged}"/>
                     <GridViewColumn Header="Номер заказа" Width="auto" DisplayMemberBinding="{Binding Path=RelOrderId, UpdateSourceTrigger=PropertyChanged}"/>
                     <GridViewColumn Header="Цена, рублей" Width="auto" DisplayMemberBinding="{Binding Path=Price, UpdateSourceTrigger=PropertyChanged}"/>
                 </GridView>
@@ -65,14 +66,14 @@
 
         <StackPanel Grid.ColumnSpan="2" Grid.Column="4" Grid.Row="1">
             <TextBlock FontSize="14px" Margin="25px 35px 15px 5px" TextAlignment="Center" Text="Пункт выдачи:"/>
-            <ComboBox Margin="15px 0px 15px 5px">
+            <ComboBox Margin="15px 0px 15px 5px" SelectedItem="{Binding SelectedPuP}" DataContext="{Binding PuPList, UpdateSourceTrigger=PropertyChanged}">
             </ComboBox>
         </StackPanel>
 
         <StackPanel Grid.Column="3">
             <TextBlock FontSize="14px" Margin="15px 25px 15px 0px" TextAlignment="Center" Text="Сортировка:"/>
-            <RadioButton Margin="10px 3px 0px 0px" Content="По возрастанию"/>
-            <RadioButton Margin="10px 3px 0px 0px" Content="По убыванию"/>
+            <RadioButton Margin="10px 3px 0px 0px" Content="По возрастанию" IsChecked="{Binding IsUpSort, UpdateSourceTrigger=PropertyChanged}"/>
+            <RadioButton Margin="10px 3px 0px 0px" Content="По убыванию" IsChecked="{Binding IsDownSort, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
 
         <StackPanel Grid.Column="4" Grid.ColumnSpan="2">
@@ -85,14 +86,14 @@
             <Expander Header="Цена"  Margin="95px,18px,530px,5px" FontSize="14px" Width="275px" Height="60px">
                 <Grid Grid.Column="2" Grid.Row="3">
                     <TextBlock Text="От:"/>
-                    <TextBox Margin="0px 0px 140px 15px" Height="25px" Width="80px"/>
+                    <TextBox Margin="0px 0px 140px 15px" Height="25px" Width="80px" Text="{Binding MinPrice}"/>
                     <TextBlock Margin="125px 0px 0px 0px" Text="До:"/>
-                    <TextBox Margin="130px 0px 0px 15px" Height="25px" Width="100px"/>
+                    <TextBox Margin="130px 0px 0px 15px" Height="25px" Width="100px" Text="{Binding MaxPrice}"/>
                 </Grid>
             </Expander>
             <Expander Header="Тип товара"  Margin="25px 0px 0px 0px" FontSize="14px" Width="200px" Height="50px">
                 <Grid Grid.Column="2" Grid.Row="3">
-                    <ComboBox Margin="35px 0px 15px 5px" Height="20px">
+                    <ComboBox Margin="35px 0px 15px 5px" Height="20px" SelectedItem="{Binding SelectedProductType, UpdateSourceTrigger=PropertyChanged}" DataContext="{Binding ProductTypeList}">
                     </ComboBox>
                 </Grid>
             </Expander>

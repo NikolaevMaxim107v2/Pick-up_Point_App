@@ -31,7 +31,7 @@
 
         <!--Списки-->
         <ListView Name="DrugsListView" Grid.Column="0" Grid.Row="1" Margin="10px 10px 10px 10px" Grid.ColumnSpan="3"
-        ItemsSource="{Binding UpdateSourceTrigger=PropertyChanged}"
+        ItemsSource="{Binding ProductsList, UpdateSourceTrigger=PropertyChanged}"
         SelectedItem="{Binding SelectedItem}">
             <ListView.View>
                 <GridView AllowsColumnReorder="False">
@@ -45,14 +45,14 @@
         </ListView>
 
         <ListView Name="TransactionsList" Grid.Column="0" Grid.Row="2" Margin="10px 10px 10px 10px" Grid.ColumnSpan="3"
-        ItemsSource="{Binding TransactionsList}">
+        ItemsSource="{Binding ReturnedList}">
             <ListView.View>
                 <GridView AllowsColumnReorder="False">
-                    <GridViewColumn Header="ID" Width="auto" DisplayMemberBinding="{Binding Path=Id, UpdateSourceTrigger=PropertyChanged}"/>
-                    <GridViewColumn Header="Название" Width="auto" DisplayMemberBinding="{Binding Path=Name, UpdateSourceTrigger=PropertyChanged}"/>
-                    <GridViewColumn Header="Номер заказа" Width="auto" DisplayMemberBinding="{Binding Path=RelOrderId, UpdateSourceTrigger=PropertyChanged}"/>
-                    <GridViewColumn Header="Номер Товара" Width="auto" DisplayMemberBinding="{Binding Path=ProductId, UpdateSourceTrigger=PropertyChanged}"/>
-                    <GridViewColumn Header="Цена, рублей" Width="auto" DisplayMemberBinding="{Binding Path=Price, UpdateSourceTrigger=PropertyChanged}"/>
+                    <GridViewColumn Header="ID" Width="auto" DisplayMemberBinding="{Binding Path=ReturnId, UpdateSourceTrigger=PropertyChanged}"/>
+                    <GridViewColumn Header="Название" Width="auto" DisplayMemberBinding="{Binding Path=ReturnName, UpdateSourceTrigger=PropertyChanged}"/>
+                    <GridViewColumn Header="Номер заказа" Width="auto" DisplayMemberBinding="{Binding Path=ReturnRelOrderId, UpdateSourceTrigger=PropertyChanged}"/>
+                    <GridViewColumn Header="Номер Товара" Width="auto" DisplayMemberBinding="{Binding Path=ReturnProductId, UpdateSourceTrigger=PropertyChanged}"/>
+                    <GridViewColumn Header="Цена, рублей" Width="auto" DisplayMemberBinding="{Binding Path=ReturnPrice, UpdateSourceTrigger=PropertyChanged}"/>
                 </GridView>
             </ListView.View>
         </ListView>
@@ -61,11 +61,9 @@
             <Label FontSize="18px" HorizontalAlignment="Center" Margin="0px 20px 0px 0px">Окно выдачи</Label>
             <Label FontSize="14px" HorizontalAlignment="Center" Margin="0px 0px 0px 0px">(Введите номер заказа)</Label>
             <TextBlock FontSize="18px" HorizontalAlignment="Center" Margin="0px 20px 0px 0px" Text="Просканируйте штрихкод&#10;или введите номер заказа"/>
-            <TextBox Margin="15px 0px 15px 25px" Width="350px" Height="25px" IsReadOnly="True" Text=""/>
+            <TextBox Margin="15px 0px 15px 25px" Width="350px" Height="25px" IsReadOnly="True" Text="{Binding OrderCode, UpdateSourceTrigger=PropertyChanged}"/>
             <TextBlock FontSize="18px" HorizontalAlignment="Center" Margin="0px 0px 0px 5px" TextAlignment="Center" Text="Просканируйте штрихкод возвращаемого товара&#10; или введите код возвращаемого товара"/>
-            <TextBox Margin="15px 0px 15px 25px" Width="350px" Height="25px" Text=""/>
-            <Label FontSize="18px" HorizontalAlignment="Center" Margin="0px 0px 0px 0px">Цена</Label>
-            <TextBox Margin="15px 0px 15px 0px" Width="350px" Height="25px" IsReadOnly="True" Text=""/>
+            <TextBox Margin="15px 0px 15px 25px" Width="350px" Height="25px" Text="{Binding ProductCode, UpdateSourceTrigger=PropertyChanged}"/>
             <Button Name="SellButton" Content="Назад" VerticalAlignment="Bottom" FontSize="14px" Height="40px" Margin="50px 35px 50px 30px" Command="{Binding BackToMain}"/>
         </StackPanel>
 

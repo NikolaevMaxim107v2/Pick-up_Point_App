@@ -37,6 +37,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -61,6 +63,7 @@
     <Compile Include="Commands\ToGivePageCommand.cs" />
     <Compile Include="Commands\ToMainPageAdminCommand.cs" />
     <Compile Include="Commands\ToMainPageCommand.cs" />
+    <Compile Include="Commands\ToStatPageCommand.cs" />
     <Compile Include="Commands\ToUserDataCommand.cs" />
     <Compile Include="Model\Order.cs" />
     <Compile Include="Model\Position.cs" />
@@ -80,6 +83,7 @@
     <Compile Include="ViewModel\ErrorBox.cs" />
     <Compile Include="ViewModel\MainPageAdminVM.cs" />
     <Compile Include="ViewModel\MainPageVM.cs" />
+    <Compile Include="ViewModel\StatPageVM.cs" />
     <Compile Include="ViewModel\UserDataPageVM.cs" />
     <Compile Include="ViewModel\WelcomePageVM.cs" />
     <Compile Include="View\AddPage.xaml.cs">
@@ -94,6 +98,9 @@
     </Compile>
     <Compile Include="View\MainPageAdmin.xaml.cs">
       <DependentUpon>MainPageAdmin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\StatPage.xaml.cs">
+      <DependentUpon>StatPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\UserDataPage.xaml.cs">
       <DependentUpon>UserDataPage.xaml</DependentUpon>
@@ -142,6 +149,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\StatPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\UserDataPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

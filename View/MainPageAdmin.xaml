@@ -62,7 +62,9 @@
         <!--Кнопки списка-->
         <Button Name="AddButton" Content="Добавить товар" FontSize="14px" Margin="25px 20px 25px 20px" Command="{Binding ToAddPageCommand}" Grid.Row="3" Grid.Column="4" Grid.ColumnSpan="2"/>
         <Button Name="DeleteButton" Content="Выдать заказ" FontSize="14px" Margin="25px 20px 25px 20px" Command="{Binding ToGivePageCommand}" Grid.Row="4" Grid.Column="4" Grid.ColumnSpan="2"/>
-
+        <Button Name="StatButton" Content="Перейти к статистике" FontSize="14px" Margin="25px 20px 25px 20px" Command="{Binding ToStatPageCommand}" Grid.Row="5" Grid.Column="4" Grid.ColumnSpan="2"/>
+        
+        
         <TextBlock FontSize="14px" Margin="25px 35px 15px 5px" Grid.Column="4" Grid.ColumnSpan="2" Grid.Row="2" TextAlignment="Left" Text="{Binding OrdersCount}"/>
 
         <StackPanel Grid.ColumnSpan="2" Grid.Column="4" Grid.Row="1">
@@ -101,6 +103,9 @@
                     <ComboBox Margin="35px 0px 15px 5px" Height="20px" SelectedItem="{Binding SelectedProductType, UpdateSourceTrigger=PropertyChanged}" DataContext="{Binding ProductTypeList}">
                     </ComboBox>
                 </Grid>
+            </Expander>
+            <Expander Header="Номер заказа"  Margin="425px 0px 0px 0px" FontSize="14px" Width="200px" Height="50px">
+                <TextBox Margin="0px 0px 0px 5px" Height="25px" Width="170px" Text="{Binding OrderID}"/>
             </Expander>
         </Grid>
 

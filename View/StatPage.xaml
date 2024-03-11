@@ -1,0 +1,68 @@
+﻿<UserControl x:Class="Pick_up_Point_App.View.StatPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Pick_up_Point_App.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="750" d:DesignWidth="900">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <Border Grid.Row ="0" Grid.Column="0"  BorderThickness="3px" BorderBrush="#4B0082" Margin="5px 2px 5px 2px" Background="#ca9aec"/>
+        <Border Grid.Row ="0" Grid.Column="1"  BorderThickness="3px" BorderBrush="#4B0082" Margin="5px 2px 5px 2px" Background="#ca9aec"/>
+        <Border Grid.Row ="1" Grid.Column="0" Grid.ColumnSpan="1" Grid.RowSpan="1" BorderThickness="3px" BorderBrush="#4B0082" Margin="2px 2px 2px 2px" Background="#ca9aec"/>
+        <Border Grid.Row ="1" Grid.Column="1" Grid.ColumnSpan="1" Grid.RowSpan="1" BorderThickness="3px" BorderBrush="#4B0082" Margin="2px 2px 2px 2px" Background="#ca9aec"/>
+        <Border Grid.Row ="2" Grid.Column="0" Grid.ColumnSpan="2" BorderThickness="3px" BorderBrush="#4B0082" Margin="5px 2px 5px 2px" Background="#ca9aec"/>
+
+        <ListView Name="List2" Grid.Column="0" Grid.Row="1" Margin="10px 10px 10px 10px"
+                  ItemsSource="{Binding ProductsList, UpdateSourceTrigger=PropertyChanged}"
+                  SelectedItem="{Binding SelectedItem}">
+            <ListView.View>
+                <GridView AllowsColumnReorder="False">
+                    <GridViewColumn Header="ID" Width="auto" DisplayMemberBinding="{Binding Path=Id, UpdateSourceTrigger=PropertyChanged}"/>
+                    <GridViewColumn Header="Имя" Width="auto" DisplayMemberBinding="{Binding Path=Name, UpdateSourceTrigger=PropertyChanged}"/>
+                    <GridViewColumn Header="Фамилия" Width="auto" DisplayMemberBinding="{Binding Path=Secondname, UpdateSourceTrigger=PropertyChanged}"/>
+                    <GridViewColumn Header="Должность" Width="auto" DisplayMemberBinding="{Binding Path=Pos, UpdateSourceTrigger=PropertyChanged}"/>
+                    <GridViewColumn Header="Выдано заказов" Width="auto" DisplayMemberBinding="{Binding Path=GivenOrders, UpdateSourceTrigger=PropertyChanged}"/>
+                    <GridViewColumn Header="Возвраты" Width="auto" DisplayMemberBinding="{Binding Path=ReturnedOrders, UpdateSourceTrigger=PropertyChanged}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <ListView Name="List" Grid.Column="2" Grid.Row="1" Margin="10px 10px 10px 10px" Grid.ColumnSpan="2"
+        ItemsSource="{Binding PuPList, UpdateSourceTrigger=PropertyChanged}">
+            <ListView.View>
+                <GridView AllowsColumnReorder="False">
+                    <GridViewColumn Header="ID" Width="auto" DisplayMemberBinding="{Binding Path=Id, UpdateSourceTrigger=PropertyChanged}"/>
+                    <GridViewColumn Header="Название" Width="auto" DisplayMemberBinding="{Binding Path=Name, UpdateSourceTrigger=PropertyChanged}"/>
+                    <GridViewColumn Header="Адрес" Width="auto" DisplayMemberBinding="{Binding Path=Address, UpdateSourceTrigger=PropertyChanged}"/>
+                    <GridViewColumn Header="Имеется" Width="auto" DisplayMemberBinding="{Binding Path=OrdersHave, UpdateSourceTrigger=PropertyChanged}"/>
+                    <GridViewColumn Header="Выдано" Width="auto" DisplayMemberBinding="{Binding Path=OrdersGiven, UpdateSourceTrigger=PropertyChanged}"/>
+                    <GridViewColumn Header="Возвращено" Width="auto" DisplayMemberBinding="{Binding Path=OrdersReturned, UpdateSourceTrigger=PropertyChanged}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="1" Margin="5px 5px 5px 5px" VerticalAlignment="Center">
+            <Label Grid.Column="0" Grid.Row="0" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center">Поиск сотрудника</Label>
+            <TextBox Margin="15px 0px 15px 0px" Text="{Binding TextSearchUser, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        </StackPanel>
+
+        <StackPanel Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="1" Margin="5px 5px 5px 5px" VerticalAlignment="Center">
+            <Label Grid.Column="0" Grid.Row="0" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center">Поиск ПВЗ</Label>
+            <TextBox Margin="15px 0px 15px 0px" Text="{Binding TextSearchPup, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        </StackPanel>
+
+        <Button Grid.Row="2" Grid.ColumnSpan="2"  Margin="25px 25px 25px 25px" Content="Назад" FontSize="14px" Command="{Binding BackToMain}"/>
+
+    </Grid>
+</UserControl>

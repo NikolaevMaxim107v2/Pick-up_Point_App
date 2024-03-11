@@ -24,7 +24,7 @@
 
         <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Center">
 
-            <TextBlock HorizontalAlignment="Center" Margin="0px 50px 0px 0px"  FontSize="21px" Text=" Отсканируйте штрихкод&#10;или введите код вручную:"/>
+            <TextBlock HorizontalAlignment="Center" Margin="0px 50px 0px 0px"  FontSize="21px" Text="       Отсканируйте штрихкод&#10;или введите код товара вручную:"/>
             <TextBox Height="40px" Width="350px" FontSize="21px" Margin="0px 15px 0px 0px" Text="{Binding ProductCode, UpdateSourceTrigger=PropertyChanged}"/>
             <Grid>
                 <Button Content="Подтвердить" FontSize="21px" Width="150px" Height="45px"  Margin="0px 15px 175px 10px" Command="{Binding BackToMain}"/>

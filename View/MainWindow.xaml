@@ -35,6 +35,9 @@
             <DataTemplate DataType="{x:Type viewmodels:GivePageVM}">
                 <views:GivePage/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:StatPageVM}">
+                <views:StatPage/>
+            </DataTemplate>
         </Grid.Resources>
         <ContentControl Content="{Binding CurrentViewModel}"/>
 

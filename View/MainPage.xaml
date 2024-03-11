@@ -35,7 +35,7 @@
         <Border Grid.Row ="0" Grid.Column="0" Grid.ColumnSpan="6" BorderThickness="3px" BorderBrush="#4B0082" Margin="110px 2px 5px 2px" Background="#ca9aec"/>
         <Border Grid.Row ="6" Grid.ColumnSpan="6" Grid.RowSpan="2" BorderThickness="3px" BorderBrush="#4B0082" Margin="2px 2px 2px 2px" Background="#ca9aec"/>
         <Border Grid.Row ="1" Grid.Column="0" Grid.ColumnSpan="4" Grid.RowSpan="5" BorderThickness="3px" BorderBrush="#4B0082" Margin="2px 2px 2px 2px" Background="#ca9aec"/>
-        <Border Grid.Row ="1" Grid.Column="4" Grid.ColumnSpan="2" Grid.RowSpan="5" BorderThickness="3px" BorderBrush="#4B0082" Margin="2px 2px 2px 2px" Background="#ca9aec"/>
+        <Border Grid.Row ="1" Grid.Column="4" Grid.ColumnSpan="2" Grid.RowSpan="5" BorderThickness="3px" BorderBrush="#4B0082" Margin="2px 25px 2px 75px" Background="#ca9aec"/>
 
         <!--Поле поиска-->
         <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Margin="110px 5px 0px 0px" VerticalAlignment="Center">
@@ -52,6 +52,7 @@
                     <GridViewColumn Header="ID" Width="auto" DisplayMemberBinding="{Binding Path=Id, UpdateSourceTrigger=PropertyChanged}"/>
                     <GridViewColumn Header="Название" Width="auto" DisplayMemberBinding="{Binding Path=Name, UpdateSourceTrigger=PropertyChanged}"/>
                     <GridViewColumn Header="Тип" Width="auto" DisplayMemberBinding="{Binding Path=ProductType, UpdateSourceTrigger=PropertyChanged}"/>
+                    <GridViewColumn Header="Описание" Width="auto" DisplayMemberBinding="{Binding Path=ProductDesc, UpdateSourceTrigger=PropertyChanged}"/>
                     <GridViewColumn Header="Номер заказа" Width="auto" DisplayMemberBinding="{Binding Path=RelOrderId, UpdateSourceTrigger=PropertyChanged}"/>
                     <GridViewColumn Header="Цена, рублей" Width="auto" DisplayMemberBinding="{Binding Path=Price, UpdateSourceTrigger=PropertyChanged}"/>
                 </GridView>
@@ -59,9 +60,8 @@
         </ListView>
 
         <!--Кнопки списка-->
-        <Button Name="AddButton" Content="Добавить товар" FontSize="14px" Margin="25px 20px 25px 20px" Command="{Binding ToAddPageCommand}" Grid.Row="3" Grid.Column="4" Grid.ColumnSpan="2"/>
+        <Button Name="AddButton" Content="Добавить товар на склад" FontSize="14px" Margin="25px 20px 25px 20px" Command="{Binding ToAddPageCommand}" Grid.Row="3" Grid.Column="4" Grid.ColumnSpan="2"/>
         <Button Name="GiveButton" Content="Выдать заказ" FontSize="14px" Margin="25px 20px 25px 20px" Command="{Binding ToGivePageCommand}" Grid.Row="4" Grid.Column="4" Grid.ColumnSpan="2"/>
-        <Button Name="StatButton" Content="Перейти к статистике" FontSize="14px" Margin="25px 20px 25px 20px" Command="{Binding ToStatPageCommand}" Grid.Row="5" Grid.Column="4" Grid.ColumnSpan="2"/>
 
         <TextBlock FontSize="14px" Margin="25px 35px 15px 5px" Grid.Column="4" Grid.ColumnSpan="2" Grid.Row="2" TextAlignment="Left" Text="{Binding OrdersCount}"/>
 

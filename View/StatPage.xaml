@@ -23,7 +23,7 @@
         <Border Grid.Row ="1" Grid.Column="1" Grid.ColumnSpan="1" Grid.RowSpan="1" BorderThickness="3px" BorderBrush="#4B0082" Margin="2px 2px 2px 2px" Background="#ca9aec"/>
         <Border Grid.Row ="2" Grid.Column="0" Grid.ColumnSpan="2" BorderThickness="3px" BorderBrush="#4B0082" Margin="5px 2px 5px 2px" Background="#ca9aec"/>
 
-        <ListView Name="List2" Grid.Column="0" Grid.Row="1" Margin="10px 10px 10px 10px"
+        <ListView Name="List2" Grid.Column="1" Grid.Row="1" Margin="10px 10px 10px 10px"
                   ItemsSource="{Binding ProductsList, UpdateSourceTrigger=PropertyChanged}"
                   SelectedItem="{Binding SelectedItem}">
             <ListView.View>
@@ -38,7 +38,7 @@
             </ListView.View>
         </ListView>
 
-        <ListView Name="List" Grid.Column="2" Grid.Row="1" Margin="10px 10px 10px 10px" Grid.ColumnSpan="2"
+        <ListView Name="List" Grid.Column="0" Grid.Row="1" Margin="10px 10px 10px 10px" Grid.ColumnSpan="1"
         ItemsSource="{Binding PuPList, UpdateSourceTrigger=PropertyChanged}">
             <ListView.View>
                 <GridView AllowsColumnReorder="False">
@@ -47,17 +47,17 @@
                     <GridViewColumn Header="Адрес" Width="auto" DisplayMemberBinding="{Binding Path=Address, UpdateSourceTrigger=PropertyChanged}"/>
                     <GridViewColumn Header="Имеется" Width="auto" DisplayMemberBinding="{Binding Path=OrdersHave, UpdateSourceTrigger=PropertyChanged}"/>
                     <GridViewColumn Header="Выдано" Width="auto" DisplayMemberBinding="{Binding Path=OrdersGiven, UpdateSourceTrigger=PropertyChanged}"/>
-                    <GridViewColumn Header="Возвращено" Width="auto" DisplayMemberBinding="{Binding Path=OrdersReturned, UpdateSourceTrigger=PropertyChanged}"/>
+                    <GridViewColumn Header="Возвраты" Width="auto" DisplayMemberBinding="{Binding Path=OrdersReturned, UpdateSourceTrigger=PropertyChanged}"/>
                 </GridView>
             </ListView.View>
         </ListView>
 
-        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="1" Margin="5px 5px 5px 5px" VerticalAlignment="Center">
+        <StackPanel Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="1" Margin="5px 5px 5px 5px" VerticalAlignment="Center">
             <Label Grid.Column="0" Grid.Row="0" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center">Поиск сотрудника</Label>
             <TextBox Margin="15px 0px 15px 0px" Text="{Binding TextSearchUser, UpdateSourceTrigger=PropertyChanged}"></TextBox>
         </StackPanel>
 
-        <StackPanel Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="1" Margin="5px 5px 5px 5px" VerticalAlignment="Center">
+        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="1" Margin="5px 5px 5px 5px" VerticalAlignment="Center">
             <Label Grid.Column="0" Grid.Row="0" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center">Поиск ПВЗ</Label>
             <TextBox Margin="15px 0px 15px 0px" Text="{Binding TextSearchPup, UpdateSourceTrigger=PropertyChanged}"></TextBox>
         </StackPanel>

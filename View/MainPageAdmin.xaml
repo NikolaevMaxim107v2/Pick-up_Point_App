@@ -53,6 +53,7 @@
                     <GridViewColumn Header="ID" Width="auto" DisplayMemberBinding="{Binding Path=Id, UpdateSourceTrigger=PropertyChanged}"/>
                     <GridViewColumn Header="Название" Width="auto" DisplayMemberBinding="{Binding Path=Name, UpdateSourceTrigger=PropertyChanged}"/>
                     <GridViewColumn Header="Тип" Width="auto" DisplayMemberBinding="{Binding Path=ProductType, UpdateSourceTrigger=PropertyChanged}"/>
+                    <GridViewColumn Header="Описание" Width="auto" DisplayMemberBinding="{Binding Path=ProductDesc, UpdateSourceTrigger=PropertyChanged}"/>
                     <GridViewColumn Header="Номер заказа" Width="auto" DisplayMemberBinding="{Binding Path=RelOrderId, UpdateSourceTrigger=PropertyChanged}"/>
                     <GridViewColumn Header="Цена, рублей" Width="auto" DisplayMemberBinding="{Binding Path=Price, UpdateSourceTrigger=PropertyChanged}"/>
                 </GridView>
@@ -60,7 +61,7 @@
         </ListView>
 
         <!--Кнопки списка-->
-        <Button Name="AddButton" Content="Добавить товар" FontSize="14px" Margin="25px 20px 25px 20px" Command="{Binding ToAddPageCommand}" Grid.Row="3" Grid.Column="4" Grid.ColumnSpan="2"/>
+        <Button Name="AddButton" Content="Добавить товар  на склад" FontSize="14px" Margin="25px 20px 25px 20px" Command="{Binding ToAddPageCommand}" Grid.Row="3" Grid.Column="4" Grid.ColumnSpan="2"/>
         <Button Name="DeleteButton" Content="Выдать заказ" FontSize="14px" Margin="25px 20px 25px 20px" Command="{Binding ToGivePageCommand}" Grid.Row="4" Grid.Column="4" Grid.ColumnSpan="2"/>
         <Button Name="StatButton" Content="Перейти к статистике" FontSize="14px" Margin="25px 20px 25px 20px" Command="{Binding ToStatPageCommand}" Grid.Row="5" Grid.Column="4" Grid.ColumnSpan="2"/>
         

@@ -70,7 +70,7 @@
 
         <StackPanel Grid.ColumnSpan="2" Grid.Column="4" Grid.Row="1">
             <TextBlock FontSize="14px" Margin="25px 35px 15px 5px" TextAlignment="Center" Text="Пункт выдачи:"/>
-            <ComboBox Margin="15px 0px 15px 5px" SelectedItem="{Binding SelectedPuP}" DataContext="{Binding PuPList, UpdateSourceTrigger=PropertyChanged}">
+            <ComboBox Margin="15px 0px 15px 5px" SelectedItem="{Binding SelectedPuP}" ItemsSource="{Binding PuPList, UpdateSourceTrigger=PropertyChanged}">
             </ComboBox>
         </StackPanel>
 
@@ -101,7 +101,7 @@
             </Expander>
             <Expander Header="Тип товара"  Margin="25px 0px 0px 0px" FontSize="14px" Width="200px" Height="50px">
                 <Grid Grid.Column="2" Grid.Row="3">
-                    <ComboBox Margin="35px 0px 15px 5px" Height="20px" SelectedItem="{Binding SelectedProductType, UpdateSourceTrigger=PropertyChanged}" DataContext="{Binding ProductTypeList}">
+                    <ComboBox Margin="35px 0px 15px 5px" Height="20px" SelectedItem="{Binding SelectedProductType, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding ProductTypeList}">
                     </ComboBox>
                 </Grid>
             </Expander>
